@@ -64,7 +64,8 @@
 % draft mode.
 %
 \documentclass[conference]{IEEEtran}
-\usepackage{blindtext, graphicx, hyperref, amsmath, fixmath}
+\usepackage{blindtext, graphicx, hyperref, amsmath, fixmath, graphicx, caption, amssymb, tabu}
+\graphicspath{ {images/} }
 % Add the compsoc option for Computer Society conferences.
 %
 % If IEEEtran.cls has not been installed into the LaTeX system files,
@@ -462,8 +463,21 @@ $$
 A characteristic function assigns value of either $0$ or $1$ to each element of $\mathbf{S}$. Now consider a fuzzy set $B \subset \mathbf{S}$. A membership function $\mathbold{\mu}_B(x)$ is defined as $\mathbold{\mu}_B:\mathbf{S}\rightarrow[0, 1]$. Unlike the notion of a set in classical set theory where an element either belongs or does not belong to a particular set based on a bivalent condition, in fuzzy set theory an element\rq s belongingness to a particular set is decided using membership function which gives a membership value between $0$ and $1$.
 
 \subsection{Problem Formulation}
-\blindtext
 
+The problem can be divided into three major parts:
+
+\begin{itemize}
+\item \textbf{Data Collection}: Using GPS, we first collect where and how long the user spends his/her time and tabulate that data. For this we use the Google Places API.
+\item \textbf{Fuzzification}: Fuzzify the crisp input and calculate the values of corresponding membership functions.
+\item \textbf{Defuzzification}: Set up a fuzzy inference system based on certain rules and then return recommendations and suggestions.
+\end{itemize}
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.6]{fig1}
+\caption{Fuzzy Logic System}
+\end{figure}
 
 % needed in second column of first page if using \IEEEpubid
 %\IEEEpubidadjcol
@@ -552,11 +566,47 @@ A characteristic function assigns value of either $0$ or $1$ to each element of 
 
 
 
-\section{Conclusion}
-\blindtext
+\section{Working Principle}
 
+\subsection{Data Collection}
 
+A college student is carrying his/her smart phone everywhere. Hence using the GPS we can extract his/her position throughout the day. In the application and testing of this paper, the mobile application was developed on Android while the point of interest was extracted using Google Maps API by querying the user\rq s location extracted from GPS. Google Maps API classifies most of the positions into various categories namely \texttt{restaurant}, \texttt{shopping\_mall}, \texttt{city\_hall} etc. Let us refer to all these categories hence forward as \textit{tags}. Apart from these existing tags, we generate two additional tags namely \textit{home} and \textit{work}. The GPS data for these two additional tags would be user specific. Hence initially every user needs to update their location for these two tags specifically. This step is conducted so as to recognize distinctly one\rq s home and workplace which in further course would generate accurate results. Let consider this example, one might go to a pizza shop to hang out with friends and family. However if someone is working in a pizza shop and the GPS details of the specific pizza shop is not known beforehand, it is very likely that one might consider this entire working time as time utilized for hanging out with friends. However if the person goes to some other pizza shop it is very likely he is going out with friends. To avoid this confusion this initial step has to be carried out.
 
+Let $\mathbf{X}$ be the set of all tags defined as $\mathbf{X} = \{x \mid x\text{ is a tag}\}$. Let $T$ be a function defined as $T:\mathbf{X} \rightarrow \mathbb{R}$ where $T(x)$ denotes time spent at a tag $x \in \mathbf{X}$ in minutes. Analysing the way a person lives is governed by many parameters, but in a typical student\rq s life we are mainly concerned about one\rq s health, education, leisure and social life. However a person also invests certain amount of time which fails to fall under this category. A example of this would be travelling time. Now let $S$, $L$, $H$, $W$, $O$ be subsets of $\mathbf{X}$ defined as
+\begin{align*}
+S =\ &\{x \mid x \in \mathbf{X},\ x = \text{social}\ \textrm{and}\ x \neq \text{home, work}\} \\
+L =\ &\{x \mid x \in \mathbf{X},\ x = \text{leisure}\ \textrm{and}\ x \neq \text{home, work}\} \\
+H =\ &\{x \mid x \in \mathbf{X},\ x = \text{health}\ \textrm{and}\ x \neq \text{home, work}\} \\
+W =\ &\{x \mid x \in \mathbf{X},\ x = \text{work}\ \textrm{and}\ x \neq \text{home}\} \\
+O =\ & \{x \mid x \in \mathbf{X}\ \textrm{and}\ x \notin S\cup L\cup H\cup W \}
+\end{align*}
+A \textit{tag} $x$ might belong to one or more of the sets $S,\ L,\ H,\ W$. For example, a person might visit an Amusement Park. In this case the person\rq s \textit{social} and \textit{leisure} scores are both incremented. Using this categorization technique we can extract one\rq s location and time spent at each \textit{tag} for the entire day. TABLE I lists down some locations and their possible purpose of visits. The locations mentioned below are basically \textit{tags} other than \textit{home} and \textit{work}.
+\begin{table}
+\small
+\captionof{table}{Sample locations and purposes}
+\begin{center}
+\def\arraystretch{1.7}
+\begin{tabular}{|l|l|}
+\hline
+ \bf Location & \bf Purpose \\
+ \hline
+ Cafe, Restaurant & Going out with friends and family. \\
+ \hline
+ Supermarket, Gas Station & Chores \\
+ \hline
+ Gym, Ground, Hospital & Exercise or Health Treatment \\
+ \hline
+ Cinema Hall, Spa & Leisure and Relaxation \\
+\hline
+Bank, Business Associates & Work \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\textbf{Weightage Criteria}: For a given purpose, different locations would have different amount of productivity and impact. For example, hospital and gym both fall under the \textit{health} category. However one visits Gym to increase his physical activity and hence visiting Gym has a positive impact on one\rq s health. However one visits a hospital if he/she has fallen sick. Hence, visiting a hospital has a negative impact on one\rq s health. So a monotonous grading for all the locations is bound to fail. 
+
+We define a function $Z_S:S \rightarrow [-100, 100]$ such that $Z_S(x)$ for every $x \in S$ denotes the intensity of the \textit{tag} $x$ with respect to the \textit{social} category. Similarly we define $Z_H$, $Z_L$, $Z_W$, and $Z_O$ for the \textit{health}, \textit{leisure}, \textit{work}, and \textit{other} categories respectively. The range $[-100, 100]$ is chosen for normalization purposes. For example, let $x = \text{gym}$. Say $Z_H(x) = 50 > 0$ as gym has a positive health impact. Let $y = \text{hospital}$, then $Z_H(y) = -20 < 0$ as hospital has a negative health impact. However, $Z_L(x) = Z_L(y) = 0$ as both $x$ and $y$ don\rq t contribute to the \textit{leisure} category. Also note that if a \textit{tag} $t$ belongs to two different categories, then its weightage in both the categories cannot be $0$. The choice of weights for each \textit{tag} is explained in section II.B.
 
 
 % if have a single appendix:
