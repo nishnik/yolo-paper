@@ -645,7 +645,59 @@ K_H = \sum_{x_i \in H}T(x_i) + \tau_H
 \]
 Similarly, $K_W$, $K_S$, $K_L$, $K_O$ are defined.
 
+We define the following fuzzy sets in the following categories. These sets define the type of lifestyle a person is living in each category. Here \textit{leisure} also includes rest.
+\begin{align*}
+\textit{health}=&\ \{\text{unfit},\ \text{fit},\ \text{proactive}\}\\
+\textit{leisure}=&\ \{\text{hectic},\ \text{ideal},\ \text{lazy}\}\\
+\textit{social}=&\ \{\text{reserved},\ \text{sociable},\ \text{over\_social}\}\\
+\textit{work}=&\ \{\text{lethargic},\ \text{hard\_working},\ \text{industrious}\}\\
+\textit{others}=&\ \{\text{non\_productive},\ \text{productive}\}
+\end{align*}
+The membership functions for these fuzzy sets are constructed by conducting a survey on a sample population. We will approximate the data from the survey using quantile range and trapezoidal membership functions. However, one can use various other techniques to plot membership functions. For instance, in a sample survey the hours spent by fit students in the \textit{health} category were: $0.45,\ 1.25,\ 2,\ 2.25,\ 2.5,\ 2.5,\ 2.75,\ 2.75,\ 3,\ 4,\ 4.25$. So with respect to the inter quantile range $Q_1 = 2$, $Q_2 = 2.5$, $Q_3 = 3$, $\inf = 0.45$, and $\sup = 4.25$. The trapezoidal membership function for the linguistic term "fit" under the \textit{health} category using these values is shown in Figure $4$.
 
+Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each linguistic terms under each \textit{category}.
+
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{fit}
+\caption{Membership function for the linguistic term \textit{fit}}
+\end{figure}
+\textbf{Fuzzification of score}: Not only the time spent at a location is important but also how the time is spent is important too. This effective utilisation of time is denoted by a \textit{score} $M_S$, $M_L$, $M_O$, $M_W$, and $M_H$ for the respective categories. The score for the \textit{social} category is calculated as follows
+\[
+M_S = \sum_{x \in S} Y(x)Z_S(x) + \tau_S\xi_S
+\]
+Similarly we define the other scores. The linguistic terms that define the fuzzy score sets for each category remain constant and are "low\_score", "ideal\_score" and "high\_score". But the membership functions for each of these linguistic terms differ from category to category. The shape of these functions are determined by conducting similar surveys on a sample population.
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{health}
+\caption{Membership function for \textit{health} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{social}
+\caption{Membership function for \textit{social} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{work}
+\caption{Membership function for \textit{work} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{leisure}
+\caption{Membership function for \textit{leisure} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{other}
+\caption{Membership function for \textit{other} category}
+\end{figure}
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
 % or
