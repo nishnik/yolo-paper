@@ -388,11 +388,12 @@
 \author{\IEEEauthorblockN{Sourish Ghosh\IEEEauthorrefmark{1},
 Aaditya S. Boob\IEEEauthorrefmark{1},
 Nishant Nikhil\IEEEauthorrefmark{1}, 
-V. Nayan Raju\IEEEauthorrefmark{1} and
+V. Nayan Raju\IEEEauthorrefmark{1},
+Ankit Kumar\IEEEauthorrefmark{1}, and
 S. K. Barai\IEEEauthorrefmark{2}}
 \IEEEauthorblockA{\IEEEauthorrefmark{1}Department of Mathematics\\
 Email: \{\href{mailto:sourishg@iitkgp.ac.in}{sourishg}, \href{mailto:aaditya733@iitkgp.ac.in}{aaditya733}, \href{mailto:nishantnikhil@iitkgp.ac.in}{nishantnikhil}, \href{mailto:v.nayanraju@iitkgp.ac.in}{v.nayanraju}\}@iitkgp.ac.in}
-\IEEEauthorblockA{\IEEEauthorrefmark{2}Department of Civil Engineering\\
+\IEEEauthorblockA{\IEEEauthorrefmark{2}Professor, Department of Civil Engineering\\
 Email: \href{mailto:skbarai@civil.iitkgp.ernet.in}{skbarai@civil.iitkgp.ernet.in}}
 \IEEEauthorblockA{Indian Institute of Technology, Kharagpur}}
 
@@ -604,9 +605,45 @@ Bank, Business Associates & Work \\
 \end{center}
 \end{table}
 
-\textbf{Weightage Criteria}: For a given purpose, different locations would have different amount of productivity and impact. For example, hospital and gym both fall under the \textit{health} category. However one visits Gym to increase his physical activity and hence visiting Gym has a positive impact on one\rq s health. However one visits a hospital if he/she has fallen sick. Hence, visiting a hospital has a negative impact on one\rq s health. So a monotonous grading for all the locations is bound to fail. 
+\textbf{Weighing criteria}: For a given purpose, different locations would have different amount of productivity and impact. For example, hospital and gym both fall under the \textit{health} category. However one visits Gym to increase his physical activity and hence visiting Gym has a positive impact on one\rq s health. However one visits a hospital if he/she has fallen sick. Hence, visiting a hospital has a negative impact on one\rq s health. So a monotonous grading for all the locations is bound to fail. 
 
-We define a function $Z_S:S \rightarrow [-100, 100]$ such that $Z_S(x)$ for every $x \in S$ denotes the intensity of the \textit{tag} $x$ with respect to the \textit{social} category. Similarly we define $Z_H$, $Z_L$, $Z_W$, and $Z_O$ for the \textit{health}, \textit{leisure}, \textit{work}, and \textit{other} categories respectively. The range $[-100, 100]$ is chosen for normalization purposes. For example, let $x = \text{gym}$. Say $Z_H(x) = 50 > 0$ as gym has a positive health impact. Let $y = \text{hospital}$, then $Z_H(y) = -20 < 0$ as hospital has a negative health impact. However, $Z_L(x) = Z_L(y) = 0$ as both $x$ and $y$ don\rq t contribute to the \textit{leisure} category. Also note that if a \textit{tag} $t$ belongs to two different categories, then its weightage in both the categories cannot be $0$. The choice of weights for each \textit{tag} is explained in section II.B.
+We define a function $Y:\mathbf{X} \rightarrow \mathbb{R}$ such that $Y(x)$ for every $x \in \mathbf{X}$ denotes the time spent at the location \textit{tag} $x$. For example, let $x = \text{gym}$. Say $Y(x) = 50$. This implies a person has spent $50$ minutes at a \textit{gym} in the entire day.
+
+We define a function $Z_S:S \rightarrow [-100, 100]$ such that $Z_S(x)$ for every $x \in S$ denotes the intensity of the \textit{tag} $x$ with respect to the \textit{social} category. Similarly we define $Z_H$, $Z_L$, $Z_W$, and $Z_O$ for the \textit{health}, \textit{leisure}, \textit{work}, and \textit{other} categories respectively. The range $[-100, 100]$ is chosen for normalization purposes. For example, let $x = \text{gym}$. Say $Z_H(x) = 50 > 0$ as gym has a positive health impact. Let $y = \text{hospital}$, then $Z_H(y) = -20 < 0$ as hospital has a negative health impact. However, $Z_L(x) = Z_L(y) = 0$ as both $x$ and $y$ don\rq t contribute to the \textit{leisure} category. Also note that if a \textit{tag} $t$ belongs to two different categories, then its weightage in both the categories cannot be $0$.
+
+For both $Y$ and $Z$ we have excluded the \textit{home} tag as it is a special case. This is explained later.
+
+\textbf{Assigning weights}: One is free to assign the weights independently. However for better results, we assign weights by conducting a survey to understand how appropriately a location \textit{tag} fulfils the purpose of a category. For instance consider the \textit{health} category. In the survey we ask a sample population to rank every $x \in H$ in an order of fulfilment of their positive \textit{health} benefits. Consider the following survey with 
+\begin{align*}
+H =\ \{&\text{gym},\ \text{playground},\ \text{swimming\_pool}, \text{health\_club},\\
+&\text{hospital},\ \text{pharmacy},\ \text{physiotherapist},\ \text{dentist},\ \text{doctor}\}
+\end{align*}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.6]{fig2}
+\caption{Survey for \textit{positive} health weights}
+\end{figure}
+
+Figure 2 shows a survey for determining \textit{positive} weights in the \textit{health} category. As $54.1\%$ people taking the survey voted \textit{playground} as their maximum positive benefit from the \textit{health} category, the corresponding weight for $x = \text{playground}$ is computed as $Z_H(x) = \frac{54.1}{100} \times 100 = 54.1$.
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.6]{fig3}
+\caption{Survey for \textit{negative} health weights}
+\end{figure}
+
+Figure 3 shows a survey for determining \textit{negative} weights in the \textit{health} category. As $41\%$ people taking the survey voted \textit{doctor} as their maximum non fulfilment from the \textit{health} category, the corresponding weight for $x = \text{doctor}$ is computed as $Z_H(x) = -\frac{41}{100} \times 100 = -41$.
+
+\textbf{Home tag}: The time spent at the \textit{home} location might not be entirely used for rest and leisure purpose only. One might practice yoga at one\rq s home and the equivalent time should be added to the \textit{health} category. Let $\tau$ denote the total time spent at \textit{home}. And $\tau_H$, $\tau_W$, $\tau_L$, $\tau_O$, $\tau_S$ denote the equivalent time in respective categories. This time is taken as user input through the Android application. For better results random push notification system can be used to learn the characteristics of the user. The home tag will be associated with weights $\xi_H$, $\xi_S$, $\xi_L$, $\xi_W$, $\xi_O$ which denote the intensity of the tags at \textit{home}. For instance, $\xi_W=30$ and $Z_W(\text{office}) = 50 > 30$ as working at \textit{home} might not be as productive as working at \textit{office}.
+
+\subsection{Fuzzification}
+
+\textbf{Fuzzification of time}: Consider a person $p$. Suppose $p$ visits tags $\{x_1, x_2, \ldots, x_n\}$, with the time spent at these locations denoted by $\{Y(x_1), Y(x_2), \ldots, Y(x_n)\}$. Let $K_H$, $K_L$, $K_S$, $K_W$, $K_O$ denote the overall time spent in \textit{health}, \textit{leisure}, \textit{social}, \textit{work}, and \textit{other} categories respectively. Then 
+\[
+K_H = \sum_{x_i \in H}T(x_i) + \tau_H
+\]
+Similarly, $K_W$, $K_S$, $K_L$, $K_O$ are defined.
 
 
 % if have a single appendix:

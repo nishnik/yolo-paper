@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.6.23)  25 SEP 2016 21:19
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.6.23)  26 SEP 2016 14:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -500,25 +500,25 @@ LaTeX Info: Redefining \nameref on input line 353.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 410.
-LaTeX Font Info:    Try loading font information for U+msa on input line 410.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 411.
+LaTeX Font Info:    Try loading font information for U+msa on input line 411.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 410.
+LaTeX Font Info:    Try loading font information for U+msb on input line 411.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 410.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 411.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 410.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 411.
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
@@ -527,7 +527,7 @@ File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 File: images/fig1.png Graphic file (type QTm)
 
 <use  "images/fig1.png" >
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 573.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 574.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
@@ -536,7 +536,16 @@ File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 
 
 ]
-** WARNING: \IEEEbiography is locked out when in conference mode (line 687).
+File: images/fig2.png Graphic file (type QTm)
+
+<use  "images/fig2.png" >
+File: images/fig3.png Graphic file (type QTm)
+ <use  "images/fig3.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2]
+** WARNING: \IEEEbiography is locked out when in conference mode (line 724).
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -548,21 +557,21 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 707.
-[2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 707.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 744.
+[3]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 744.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 707.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 707.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 707.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 744.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 744.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 744.
  ) 
 Here is how much of TeX's memory you used:
- 11713 strings out of 493591
- 170632 string characters out of 6143546
+ 11718 strings out of 493591
+ 170689 string characters out of 6143546
  248515 words of memory out of 5000000
- 15010 multiletter control sequences out of 15000+600000
+ 15013 multiletter control sequences out of 15000+600000
  40159 words of font info for 109 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
  36i,14n,45p,1542b,323s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on main.pdf (2 pages).
+Output written on main.pdf (3 pages).
