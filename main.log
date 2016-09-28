@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.6.23)  28 SEP 2016 15:55
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.6.23)  28 SEP 2016 17:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -541,7 +541,7 @@ File: images/fig2.png Graphic file (type QTm)
 <use  "images/fig2.png" >
 File: images/fig3.png Graphic file (type QTm)
  <use  "images/fig3.png" > [2]
-Underfull \hbox (badness 2443) in paragraph at lines 655--657
+Underfull \hbox (badness 2443) in paragraph at lines 656--658
 \OT1/ptm/m/n/10 structed by con-duct-ing a sur-vey on a sam-ple pop-u-la-
  []
 
@@ -554,29 +554,22 @@ File: images/social.png Graphic file (type QTm)
 <use  "images/social.png" >
 File: images/work.png Graphic file (type QTm)
  <use  "images/work.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: images/leisure.png Graphic file (type QTm)
-
 <use  "images/leisure.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
 File: images/other.png Graphic file (type QTm)
- <use  "images/other.png" >
+<use  "images/other.png" >
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
 File: images/ideal_health.png Graphic file (type QTm)
-
-<use  "images/ideal_health.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+ <use  "images/ideal_health.png" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -585,35 +578,29 @@ File: images/health_score.png Graphic file (type QTm)
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3]
-Underfull \hbox (badness 10000) in paragraph at lines 751--756
+[4]
+Underfull \hbox (badness 10000) in paragraph at lines 752--753
 []\OT1/ptm/m/n/10 Let $\OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 be a rec-om-men-da
 -tion with at-tributes
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 751--756
+Underfull \hbox (badness 1648) in paragraph at lines 752--753
 \OT1/ptm/m/n/10 its mem-ber-ship value. Let $\OML/cmm/m/it/10 ^^V[]; ^^V[]; ^^V
 []; [] ; ^^V[]$ \OT1/ptm/m/n/10 de-note the
  []
 
-[4]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
-Overfull \hbox (8.34792pt too wide) in paragraph at lines 825--838
+Overfull \hbox (8.34792pt too wide) in paragraph at lines 828--841
  [] 
  []
 
 
-Overfull \hbox (5.09074pt too wide) in paragraph at lines 845--858
+Overfull \hbox (5.09074pt too wide) in paragraph at lines 848--861
  [] 
  []
 
-
-Underfull \vbox (badness 2932) has occurred while \output is active []
-
- [5]
+[5]
 
 ** Conference Paper **
 Before submitting the final camera ready copy, remember to:
@@ -625,21 +612,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 947.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 947.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 950.
+[6
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 950.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 947.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 947.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 947.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 950.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 950.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 950.
  ) 
 Here is how much of TeX's memory you used:
  11735 strings out of 493591
  170932 string characters out of 6143546
- 254515 words of memory out of 5000000
+ 253515 words of memory out of 5000000
  15022 multiletter control sequences out of 15000+600000
  40666 words of font info for 110 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
- 36i,14n,45p,1542b,342s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,14n,45p,1542b,336s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (6 pages).

@@ -572,9 +572,9 @@ The problem can be divided into three major parts:
 
 \subsection{Data Collection}
 
-A college student is carrying his/her smart phone everywhere. Hence using the GPS we can extract his/her position throughout the day. In the application and testing of this paper, the mobile application was developed on Android while the point of interest was extracted using Google Maps API by querying the user\rq s location extracted from GPS. Google Maps API classifies most of the positions into various categories namely \texttt{restaurant}, \texttt{shopping\_mall}, \texttt{city\_hall} etc. Let us refer to all these categories hence forward as \textit{tags}. Apart from these existing tags, we generate two additional tags namely \textit{home} and \textit{work}. The GPS data for these two additional tags would be user specific. Hence initially every user needs to update their location for these two tags specifically. This step is conducted so as to recognize distinctly one\rq s home and workplace which in further course would generate accurate results. Let consider this example, one might go to a pizza shop to hang out with friends and family. However if someone is working in a pizza shop and the GPS details of the specific pizza shop is not known beforehand, it is very likely that one might consider this entire working time as time utilized for hanging out with friends. However if the person goes to some other pizza shop it is very likely he is going out with friends. To avoid this confusion this initial step has to be carried out.
+A college student is carrying his/her smart phone everywhere. Hence using the GPS we can extract his/her position throughout the day. In the application and testing of this paper, the mobile application was developed on Android while the point of interest was extracted using Google Maps API by querying the user\rq s location extracted from GPS. Google Maps API classifies most of the locations into various categories namely \texttt{restaurant}, \texttt{shopping\_mall}, \texttt{city\_hall} etc. Let us refer to all these categories hence forward as \textit{tags}. Apart from these existing tags, we generate two additional tags namely \texttt{home} and \texttt{work}. The GPS data for these two additional tags would be user specific. Hence initially every user needs to update their location for these two tags specifically. This step is conducted so as to recognize distinctly one\rq s home and workplace which in further course would generate accurate results. Let consider this example, one might go to a pizza shop to hang out with friends and family. However if someone is working in a pizza shop and the GPS details of the specific pizza shop is not known beforehand, it is very likely that one might consider this entire working time as time utilized for hanging out with friends. However if the person goes to some other pizza shop it is very likely he is going out with friends. To avoid this confusion this initial step has to be carried out.
 
-Let $\mathbf{X}$ be the set of all tags defined as $\mathbf{X} = \{x \mid x\text{ is a tag}\}$. Analysing the way a person lives is governed by many parameters, but in a typical student\rq s life we are mainly concerned about one\rq s health, education, leisure and social life. However a person also invests certain amount of time which fails to fall under this category. A example of this would be travelling time. Now let $S$, $L$, $H$, $W$, $O$ be subsets of $\mathbf{X}$ defined as
+Let $\mathbf{X}$ be the set of all tags defined as $\mathbf{X} = \{x \mid x\text{ is a tag}\}$. Analysing the way a person lives is governed by many parameters, but in a typical student\rq s life we are mainly concerned about one\rq s health, education, leisure and social life. However a person also invests certain amount of time which fails to fall under these categories. A example of this would be travelling time. Activities like these fall under the \textit{other} category. Now let $S$, $L$, $H$, $W$, $O$ be subsets of $\mathbf{X}$ defined as
 \begin{align*}
 S =\ &\{x \mid x \in \mathbf{X},\ x = \text{social}\ \textrm{and}\ x \neq \text{home, work}\} \\
 L =\ &\{x \mid x \in \mathbf{X},\ x = \text{leisure}\ \textrm{and}\ x \neq \text{home, work}\} \\
@@ -582,7 +582,7 @@ H =\ &\{x \mid x \in \mathbf{X},\ x = \text{health}\ \textrm{and}\ x \neq \text{
 W =\ &\{x \mid x \in \mathbf{X},\ x = \text{work}\ \textrm{and}\ x \neq \text{home}\} \\
 O =\ & \{x \mid x \in \mathbf{X}\ \textrm{and}\ x \notin S\cup L\cup H\cup W \}
 \end{align*}
-A \textit{tag} $x$ might belong to one or more of the sets $S,\ L,\ H,\ W$. For example, a person might visit an Amusement Park. In this case the person\rq s \textit{social} and \textit{leisure} scores are both incremented. Using this categorization technique we can extract one\rq s location and time spent at each \textit{tag} for the entire day. TABLE I lists down some locations and their possible purpose of visits. The locations mentioned below are basically \textit{tags} other than \textit{home} and \textit{work}.
+A \textit{tag} $x$ might belong to one or more of the sets $S,\ L,\ H,\ W$. For example, a person might visit an Amusement Park. In this case the person\rq s \textit{social} and \textit{leisure} scores are both incremented. Using this categorization technique we can extract one\rq s location and time spent at each \textit{tag} for the entire day. TABLE I lists down some locations and their possible purpose of visits. The locations mentioned are basically \textit{tags} other than \texttt{home} and \texttt{work}.
 \begin{table}
 \small
 \captionof{table}{Sample locations and purposes}
@@ -606,9 +606,9 @@ Bank, Business Associates & Work \\
 \end{center}
 \end{table}
 
-\textbf{Weighing criteria}: For a given purpose, different locations would have different amount of productivity and impact. For example, hospital and gym both fall under the \textit{health} category. However one visits Gym to increase his physical activity and hence visiting Gym has a positive impact on one\rq s health. However one visits a hospital if he/she has fallen sick. Hence, visiting a hospital has a negative impact on one\rq s health. So a monotonous grading for all the locations is bound to fail. 
+\textbf{Weighing criteria}: For a given purpose, different locations would have different amount of productivity and impact. For example, hospital and gym both fall under the \textit{health} category. However one visits a gym to increase his physical activity and hence visiting a gym has a positive impact on one\rq s health. However one visits a hospital if he/she has fallen sick. Hence, visiting a hospital has a negative impact on one\rq s health. So we have to handle these two situations differently.
 
-We define a function $Y:\mathbf{X} \rightarrow \mathbb{R}$ such that $Y(x)$ for every $x \in \mathbf{X}$ denotes the time spent at the location \textit{tag} $x$. For example, let $x = \text{gym}$. Say $Y(x) = 0.5$. This implies a person has spent $30$ minutes at a \textit{gym} in the entire day.
+We define a function $Y:\mathbf{X} \rightarrow \mathbb{R}$ such that $Y(x)$ for every $x \in \mathbf{X}$ denotes the time spent at the location \textit{tag} $x$. For example, let $x = \text{gym}$. Say $Y(x) = 0.5$. This implies a person has spent $30$ minutes at a \textit{gym} in the entire day. The unit of time is set in hours throughout this paper.
 
 We define a function $Z_S:S \rightarrow [-100, 100]$ such that $Z_S(x)$ for every $x \in S$ denotes the intensity of the \textit{tag} $x$ with respect to the \textit{social} category. Similarly we define $Z_H$, $Z_L$, $Z_W$, and $Z_O$ for the \textit{health}, \textit{leisure}, \textit{work}, and \textit{other} categories respectively. The range $[-100, 100]$ is chosen for normalization purposes. For example, let $x = \text{gym}$. Say $Z_H(x) = 50 > 0$ as gym has a positive health impact. Let $y = \text{hospital}$, then $Z_H(y) = -20 < 0$ as hospital has a negative health impact. However, $Z_L(x) = Z_L(y) = 0$ as both $x$ and $y$ don\rq t contribute to the \textit{leisure} category. Also note that if a \textit{tag} $t$ belongs to two different categories, then its weightage in both the categories cannot be $0$.
 
@@ -631,11 +631,12 @@ For both $Y$ and $Z$ we have excluded the \textit{home} tag as it is a special c
 H =\ \{&\text{gym},\ \text{playground},\ \text{swimming\_pool}, \text{health\_club},\\
 &\text{hospital},\ \text{pharmacy},\ \text{physiotherapist},\ \text{dentist},\ \text{doctor}\}
 \end{align*}
-Figure 2 shows a survey for determining \textit{positive} weights in the \textit{health} category. As $54.1\%$ people taking the survey voted \textit{playground} as their maximum positive benefit from the \textit{health} category, the corresponding weight for $x = \text{playground}$ is computed as $Z_H(x) = \frac{54.1}{100} \times 100 = 54.1$.
 
-Figure 3 shows a survey for determining \textit{negative} weights in the \textit{health} category. As $41\%$ people taking the survey voted \textit{doctor} as their maximum non fulfilment from the \textit{health} category, the corresponding weight for $x = \text{doctor}$ is computed as $Z_H(x) = -\frac{41}{100} \times 100 = -41$.
+Fig. 2 shows a survey for determining \textit{positive} weights in the \textit{health} category. As $54.1\%$ people taking the survey voted \textit{playground} as their maximum positive benefit from the \textit{health} category, the corresponding weight for $x = \text{playground}$ is computed as $Z_H(x) = \frac{54.1}{100} \times 100 = 54.1$.
 
-\textbf{Home tag}: The time spent at the \textit{home} location might not be entirely used for rest and leisure purpose only. One might practice yoga at one\rq s home and the equivalent time should be added to the \textit{health} category. Let $\tau$ denote the total time spent at \textit{home}. And $\tau_H$, $\tau_W$, $\tau_L$, $\tau_O$, $\tau_S$ denote the equivalent time in respective categories. This time is taken as user input through the Android application. For better results random push notification system can be used to learn the characteristics of the user. The home tag will be associated with weights $\xi_H$, $\xi_S$, $\xi_L$, $\xi_W$, $\xi_O$ which denote the intensity of the tags at \textit{home}. For instance, $\xi_W=30$ and $Z_W(\text{office}) = 50 > 30$ as working at \textit{home} might not be as productive as working at \textit{office}.
+Fig. 3 shows a survey for determining \textit{negative} weights in the \textit{health} category. As $41\%$ people taking the survey voted \textit{doctor} as their maximum non fulfilment from the \textit{health} category, the corresponding weight for $x = \text{doctor}$ is computed as $Z_H(x) = -\frac{41}{100} \times 100 = -41$.
+
+\textbf{Home tag}: The time spent at the \textit{home} location might not be entirely used for rest and leisure purpose only. One might practice yoga at one\rq s home and the equivalent time should be added to the \textit{health} category. Let $\tau$ denote the total time spent at \textit{home}. And $\tau_H$, $\tau_W$, $\tau_L$, $\tau_O$, $\tau_S$ denote the equivalent time in respective categories. This time is taken as user input through the mobile application. For better results a random push notification system can be used to learn the characteristics of the user. The home tag will be associated with weights $\xi_H$, $\xi_S$, $\xi_L$, $\xi_W$, $\xi_O$ which denote the intensity of the tags at \textit{home}. For instance, $\xi_W=30$ and $Z_W(\text{office}) = 50 > 30$ as working at \textit{home} might not be as productive as working at \textit{office}.
 
 \subsection{Fuzzification}
 
@@ -645,7 +646,7 @@ K_H = \sum_{x_i \in H}Y(x_i) + \tau_H
 \]
 Similarly, $K_W$, $K_S$, $K_L$, $K_O$ are defined.
 
-We define the following fuzzy sets in the following categories. These sets define the type of lifestyle a person is living in each category. Here \textit{leisure} also includes rest.
+We define the following fuzzy sets for all the categories. These sets define the type of lifestyle a person is living in each category. Here \textit{leisure} also includes rest.
 \begin{align*}
 \textit{health}=&\ \{\text{unfit},\ \text{fit},\ \text{proactive}\}\\
 \textit{leisure}=&\ \{\text{hectic},\ \text{ideal},\ \text{lazy}\}\\
@@ -653,9 +654,9 @@ We define the following fuzzy sets in the following categories. These sets defin
 \textit{work}=&\ \{\text{lethargic},\ \text{hard\_working},\ \text{industrious}\}\\
 \textit{others}=&\ \{\text{non\_productive},\ \text{productive}\}
 \end{align*}
-The membership functions for these fuzzy sets are constructed by conducting a survey on a sample population. We will approximate the data from the survey using quantile range and trapezoidal membership functions. However, one can use various other techniques to plot membership functions. For instance, in a sample survey the hours spent by fit students in the \textit{health} category were: $0.45,\ 1.25,\ 2,\ 2.25,\ 2.5,\ 2.5,\ 2.75,\ 2.75,\ 3,\ 4,\ 4.25$. So with respect to the inter quantile range $Q_1 = 2$, $Q_2 = 2.5$, $Q_3 = 3$, $\inf = 0.45$, and $\sup = 4.25$. The trapezoidal membership function for the linguistic term "fit" under the \textit{health} category using these values is shown in Figure $4$.
+The membership functions for these fuzzy sets are constructed by conducting a survey on a sample population. We will approximate the data from the survey using quantile range and trapezoidal membership functions. However, one can use various other techniques to plot membership functions. For instance, in a sample survey the hours spent by fit students in the \textit{health} category were: $0.45,\ 1.25,\ 2,\ 2.25,\ 2.5,\ 2.5,\ 2.75,\ 2.75,\ 3,\ 4,\ 4.25$. So with respect to the inter quantile range $Q_1 = 2$, $Q_2 = 2.5$, $Q_3 = 3$, $\inf = 0.45$, and $\sup = 4.25$. The trapezoidal membership function for the linguistic term "fit" under the \textit{health} category using these values is shown in Fig. $4$.
 
-Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each linguistic terms under each \textit{category}.
+Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each linguistic term under each category.
 
 \begin{figure}[h!]
 \centering
@@ -663,14 +664,44 @@ Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each lingui
 \noindent \includegraphics[scale=0.35]{fit}
 \caption{Membership function for the linguistic term \textit{fit}}
 \end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{health}
+\caption{Membership function for \textit{health} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{social}
+\caption{Membership function for \textit{social} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{work}
+\caption{Membership function for \textit{work} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{leisure}
+\caption{Membership function for \textit{leisure} category}
+\end{figure}
+\begin{figure}[h!]
+\centering
+\captionsetup{justification=centering}
+\noindent \includegraphics[scale=0.35]{other}
+\caption{Membership function for \textit{other} category}
+\end{figure}
 \textbf{Fuzzification of score}: Not only the time spent at a location is important but also how the time is spent is important too. This effective utilisation of time is denoted by a \textit{score} $M_S$, $M_L$, $M_O$, $M_W$, and $M_H$ for the respective categories. The score for the \textit{social} category is calculated as follows
 \[
 M_S = \sum_{x \in S} Y(x)Z_S(x) + \tau_S\xi_S
 \]
-Similarly we define the other scores. The fuzzy set of linguistic terms "low\_score", "ideal\_score" and "high\_score" would define the fuzzy scores in each category. The membership function of these sets in all categories would be calculated similar to the fuzzy time membership functions by conducting a survey. For instance, a survey conducted on a sample of fit students is shown in TABLE II.
+Similarly we define the other scores. The fuzzy set of linguistic terms "low\_score", "ideal\_score" and "high\_score" define the fuzzy scores in each category. The membership function of these sets in all categories is calculated similar to the fuzzy time membership functions by conducting a survey. For instance, a survey conducted on a sample of fit students is shown in TABLE II.
 \begin{table}
 \small
-\captionof{table}{Sample survey to determine the membership function for the linguistic term "ideal\_score" under \textit{health} category}
+\captionof{table}{Survey to determine the membership function for the linguistic term "ideal\_score" under \textit{health} category}
 \begin{center}
 \def\arraystretch{1.7}
 \begin{tabular}{| l | l | l |}
@@ -702,37 +733,7 @@ $4.25$ & $7$ & $4.25\times 7 =29.75$ \\
 \end{tabular}
 \end{center}
 \end{table}
-Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membership function for the linguistic term "ideal\_score" under the health category is shown in Figure 5. Similarly we can plot plot the membership functions for the entire fuzzy set across all categories.
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{health}
-\caption{Membership function for \textit{health} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{social}
-\caption{Membership function for \textit{social} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{work}
-\caption{Membership function for \textit{work} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{leisure}
-\caption{Membership function for \textit{leisure} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{other}
-\caption{Membership function for \textit{other} category}
-\end{figure}
+Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membership function for the linguistic term "ideal\_score" under the health category is shown in Fig. 10. Similarly we can plot plot the membership functions for the entire fuzzy set across all categories.
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
@@ -746,28 +747,30 @@ Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membersh
 \noindent \includegraphics[scale=0.35]{health_score}
 \caption{Calculation of membership values}
 \end{figure}
-Given the input data, $Y(x)$, $Z_i(x)$, $\tau_i$, and $\xi_i$ where $x \in \mathbf{X}$ and $i = S,\ L,\ O,\ W,\ H$, we can calculate corresponding $K_i$ and $M_i$. Using surveys or any other method we can determine the membership functions for all linguistic terms in all categories for both fuzzification of time and score. Hence we can determine the membership value of $K_i$ and $M_i$ in the respective categories for all the linguistic terms. Let $\{R_1, R_2, \ldots, R_N\}$ be a set of recommendations. Now every $R_k\ (1 \leq k \leq N)$ will be dependent on a set of linguistic terms. For example, a recommendation $R = \textit{"All work and no play makes Jack a dull boy."}$ will be outputted if a person is spending too much time and effort in work and less in his leisure and social life. That is he/she has a "industrious" work life with a high work score and has a "reserved" social life with a low social score and a "hectic" life with respect to leisure with a low score. So attributes of $R$ can be represented as $\{K_W=\text{"industrous"},\ M_W=\text{"high\_score"},\ K_S=\text{"reserved"},\ M_S=\text{"low\_score"},\ K_L=\text{"hectic"},\ M_L=\text{"low\_score"}\}$.
+Given the input data, $Y(x)$, $Z_i(x)$, $\tau_i$, and $\xi_i$ where $x \in \mathbf{X}$ and $i = S,\ L,\ O,\ W,\ H$, we calculate corresponding $K_i$ and $M_i$. Using surveys we determine the membership functions for all linguistic terms in all categories for both fuzzification of time and score. Then we determine the membership value of $K_i$ and $M_i$ in the respective categories for all the linguistic terms. Let $\{R_1, R_2, \ldots, R_N\}$ be a set of recommendations. Now every $R_k\ (1 \leq k \leq N)$ will be dependent on a set of linguistic terms. For example, a recommendation $R = \textit{"All work and no play makes Jack a dull boy."}$ will be outputted if a person is spending too much time and effort in work and less in his leisure and social life. That is he/she has a "industrious" work life with a high work score and has a "reserved" social life with a low social score and a "hectic" life with respect to leisure with a low score. So attributes of $R$ can be represented as $\{K_W=\text{"industrous"},\ M_W=\text{"high\_score"},\ K_S=\text{"reserved"},\ M_S=\text{"low\_score"},\ K_L=\text{"hectic"},\ M_L=\text{"low\_score"}\}$.
 
-Let $R_k$ be a recommendation with attributes $\{a_1, a_2, a_3, \ldots, a_n\}$. Here each $a_j\ (1 \leq j \leq n)$ is a combination of score/time with respect to a linguistic term of a category. Hence as shown previously we can calculate its membership value. Let $\mu_1, \mu_2, \mu_3, \ldots, \mu_n$ denote the respective membership values for each attribute. Here $n$ can vary for each $R_k$.  For instance, figure 4 shows the membership functions of $M_H$. Let $a_1$, $a_2$, $a_3$ be the following attributes\\
-$a_1\ =\ M_H:low\_score$\\
-$a_1\ =\ M_H:ideal\_score$\\
-$a_1\ =\ M_H:high\_score$\\
-Hence $\mu_1$, $\mu_2$, $\mu_3$ for $M_H=17$ as seen from figure 4 will be $0.6$, $0.310$, $0.0$ respectively. Using equal weighing criteria for each $a_j$, we can calculate a score of each recommendation $\rho(R_k)$ defined as
+Let $R_k$ be a recommendation with attributes $\{a_1, a_2, a_3, \ldots, a_n\}$. Here each $a_j\ (1 \leq j \leq n)$ is a combination of score/time with respect to a linguistic term of a category. Hence as shown previously we can calculate its membership value. Let $\mu_1, \mu_2, \mu_3, \ldots, \mu_n$ denote the respective membership values for each attribute. Here $n$ can vary for each $R_k$.  For instance, Fig. 11 shows the membership functions of $M_H$. Let $a_1$, $a_2$, $a_3$ be the following attributes
+\begin{align*}
+a_1\ =&\ M_H:low\_score\\
+a_2\ =&\ M_H:ideal\_score\\
+a_3\ =&\ M_H:high\_score
+\end{align*}
+Hence $\mu_1$, $\mu_2$, $\mu_3$ for $M_H=17$ as seen from Fig. 11 will be $0.6$, $0.310$, $0.0$ respectively. Using equal weighing criteria for each $a_j$, we can calculate a score of each recommendation $\rho(R_k)$ defined as
 $$\rho(R_k) = \frac{1}{n}\sum_{j=1}^{n} \mu_j$$
 Now, using the \textit{most probable criterion} the recommendation with the maximum score value $\rho(R_k)$ will be displayed as output.
 
 \section{Experiment}
-A survey conducted in IIT Kharagpur was used to determine all the membership functions for all linguistic terms across all the categories. Some of the membership functions are shown in this paper. We also installed the mobile application on students' smart phones and analysed the results. We picked a random student and analysed his data for a day. TABLE III shows the \textit{tags} he visited throughout the day and their corresponding time and weights. The score for each \textit{tag} is enumerated. TABLE IV denotes the net time and score across all the categories. We considered the recommendations in the set $R$ where $R = \{R_1, R_2, R_3, R_4\}$.
+A survey conducted in IIT Kharagpur was conducted to determine all the membership functions for all linguistic terms across all the categories. Some of the membership functions are shown in this paper. We also installed the mobile application on students' smart phones and analysed the results. We picked a random student and analysed his data for a day. TABLE III shows the \textit{tags} he visited throughout the day and their corresponding time and weights. The score for each \textit{tag} is also enumerated. TABLE IV shows the total time and score across all the categories. We considered the recommendations in the set $R$ where $R = \{R_1, R_2, R_3, R_4\}$.
 \begin{align*}
 R_1 =\ &\textit{"Catch up a movie this evening."}\\
 R_2 =\ &\textit{"Work is worship."}\\
 R_3 =\ &\textit{"Family matters."}\\
-R_4 =\ &\textit{"Hit the gym."}\\
+R_4 =\ &\textit{"Hit the gym."}
 \end{align*}
 The attributes of $R$ is shown in TABLE V. The membership values for each attribute is shown in TABLE VI and the corresponding score of each recommendation is also enumerated. As $\rho(R_1)$ is maximum the mobile application would recommend the student to \textit{"Catch up a movie this evening."}
 \begin{table}
 \small
-\captionof{table}{Experiment - Data}
+\captionof{table}{Experiment: Data}
 \begin{center}
 \def\arraystretch{1.7}
 \begin{tabular}{| l | l | l | l |}
@@ -797,7 +800,7 @@ travel & $Y(x)=1$ & $Z_O(x)=15$ & $15$ \\
 \end{table}
 \begin{table}
 \small
-\captionof{table}{Experiment - calculation of total time and score for each category}
+\captionof{table}{Experiment: Calculation of total time and score for each category}
 \begin{center}
 \def\arraystretch{1.7}
 \begin{tabular}{| l | l |}
@@ -819,7 +822,7 @@ $K_H=0.5$ & $M_H=10$ \\
 \end{table}
 \begin{table}
 \small
-\captionof{table}{Experiment - recommendation attributes}
+\captionof{table}{Experiment: Recommendation attributes}
 \begin{center}
 \def\arraystretch{1.7}
 \begin{tabular}{| l | l |}
@@ -839,7 +842,7 @@ $R_4$ & $\{K_H = \text{"unfit"},\ M_H = \text{"less\_score"}\}$ \\
 \end{table}
 \begin{table}
 \small
-\captionof{table}{Experiment - recommendation score calculation}
+\captionof{table}{Experiment: Recommendation score calculation}
 \begin{center}
 \def\arraystretch{1.7}
 \begin{tabular}{| l | l | l |}
