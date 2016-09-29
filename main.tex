@@ -348,7 +348,7 @@
 
 % correct bad hyphenation here
 \hyphenation{op-tical net-works semi-conduc-tor}
-
+\newcommand{\quotes}[1]{``#1''}
 
 \begin{document}
 %
@@ -654,7 +654,7 @@ We define the following fuzzy sets for all the categories. These sets define the
 \textit{work}=&\ \{\text{lethargic},\ \text{hard\_working},\ \text{industrious}\}\\
 \textit{others}=&\ \{\text{non\_productive},\ \text{productive}\}
 \end{align*}
-The membership functions for these fuzzy sets are constructed by conducting a survey on a sample population. We will approximate the data from the survey using quantile range and trapezoidal membership functions. However, one can use various other techniques to plot membership functions. For instance, in a sample survey the hours spent by fit students in the \textit{health} category were: $0.45,\ 1.25,\ 2,\ 2.25,\ 2.5,\ 2.5,\ 2.75,\ 2.75,\ 3,\ 4,\ 4.25$. So with respect to the inter quantile range $Q_1 = 2$, $Q_2 = 2.5$, $Q_3 = 3$, $\inf = 0.45$, and $\sup = 4.25$. The trapezoidal membership function for the linguistic term "fit" under the \textit{health} category using these values is shown in Fig. $4$.
+The membership functions for these fuzzy sets are constructed by conducting a survey on a sample population. We will approximate the data from the survey using quantile range and trapezoidal membership functions. However, one can use various other techniques to plot membership functions. For instance, in a sample survey the hours spent by fit students in the \textit{health} category were: $0.45,\ 1.25,\ 2,\ 2.25,\ 2.5,\ 2.5,\ 2.75,\ 2.75,\ 3,\ 4,\ 4.25$. So with respect to the inter quantile range $Q_1 = 2$, $Q_2 = 2.5$, $Q_3 = 3$, $\inf = 0.45$, and $\sup = 4.25$. The trapezoidal membership function for the linguistic term \quotes{fit} under the \textit{health} category using these values is shown in Fig. $4$.
 
 Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each linguistic term under each category.
 
@@ -698,10 +698,10 @@ Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each lingui
 \[
 M_S = \sum_{x \in S} Y(x)Z_S(x) + \tau_S\xi_S
 \]
-Similarly we define the other scores. The fuzzy set of linguistic terms "low\_score", "ideal\_score" and "high\_score" define the fuzzy scores in each category. The membership function of these sets in all categories is calculated similar to the fuzzy time membership functions by conducting a survey. For instance, a survey conducted on a sample of fit students is shown in TABLE II.
+Similarly we define the other scores. The fuzzy set of linguistic terms \quotes{low\_score}, \quotes{ideal\_score} and \quotes{high\_score} define the fuzzy scores in each category. The membership function of these sets in all categories is calculated similar to the fuzzy time membership functions by conducting a survey. For instance, a survey conducted on a sample of fit students is shown in TABLE II.
 \begin{table}
 \small
-\captionof{table}{Survey to determine the membership function for the linguistic term "ideal\_score" under \textit{health} category}
+\captionof{table}{Survey to determine the membership function for the linguistic term \quotes{ideal\_score} under \textit{health} category}
 \begin{center}
 \def\arraystretch{1.7}
 \begin{tabular}{| l | l | l |}
@@ -733,12 +733,12 @@ $4.25$ & $7$ & $4.25\times 7 =29.75$ \\
 \end{tabular}
 \end{center}
 \end{table}
-Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membership function for the linguistic term "ideal\_score" under the health category is shown in Fig. 10. Similarly we can plot plot the membership functions for the entire fuzzy set across all categories.
+Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membership function for the linguistic term \quotes{ideal\_score} under the health category is shown in Fig. 10. Similarly we can plot plot the membership functions for the entire fuzzy set across all categories.
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
 \noindent \includegraphics[scale=0.35]{ideal_health}
-\caption{Membership function for "ideal\_score" under \textit{health} category}
+\caption{Membership function for \quotes{ideal\_score} under \textit{health} category}
 \end{figure}
 \subsection{Defuzzification}
 \begin{figure}[h!]
@@ -747,7 +747,7 @@ Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membersh
 \noindent \includegraphics[scale=0.35]{health_score}
 \caption{Calculation of membership values}
 \end{figure}
-Given the input data, $Y(x)$, $Z_i(x)$, $\tau_i$, and $\xi_i$ where $x \in \mathbf{X}$ and $i = S,\ L,\ O,\ W,\ H$, we calculate corresponding $K_i$ and $M_i$. Using surveys we determine the membership functions for all linguistic terms in all categories for both fuzzification of time and score. Then we determine the membership value of $K_i$ and $M_i$ in the respective categories for all the linguistic terms. Let $\{R_1, R_2, \ldots, R_N\}$ be a set of recommendations. Now every $R_k\ (1 \leq k \leq N)$ will be dependent on a set of linguistic terms. For example, a recommendation $R = \textit{"All work and no play makes Jack a dull boy."}$ will be outputted if a person is spending too much time and effort in work and less in his leisure and social life. That is he/she has a "industrious" work life with a high work score and has a "reserved" social life with a low social score and a "hectic" life with respect to leisure with a low score. So attributes of $R$ can be represented as $\{K_W=\text{"industrous"},\ M_W=\text{"high\_score"},\ K_S=\text{"reserved"},\ M_S=\text{"low\_score"},\ K_L=\text{"hectic"},\ M_L=\text{"low\_score"}\}$.
+Given the input data, $Y(x)$, $Z_i(x)$, $\tau_i$, and $\xi_i$ where $x \in \mathbf{X}$ and $i = S,\ L,\ O,\ W,\ H$, we calculate corresponding $K_i$ and $M_i$. Using surveys we determine the membership functions for all linguistic terms in all categories for both fuzzification of time and score. Then we determine the membership value of $K_i$ and $M_i$ in the respective categories for all the linguistic terms. Let $\{R_1, R_2, \ldots, R_N\}$ be a set of recommendations. Now every $R_k\ (1 \leq k \leq N)$ will be dependent on a set of linguistic terms. For example, a recommendation $R = \textit{\quotes{All work and no play makes Jack a dull boy.}}$ will be outputted if a person is spending too much time and effort in work and less in his leisure and social life. That is he/she has a \quotes{industrious} work life with a high work score and has a \quotes{reserved} social life with a low social score and a \quotes{hectic} life with respect to leisure with a low score. So attributes of $R$ can be represented as $\{K_W=\text{\quotes{industrous}},\ M_W=\text{\quotes{high\_score}},\ K_S=\text{\quotes{reserved}},\ M_S=\text{\quotes{low\_score}},\ K_L=\text{\quotes{hectic}},\ M_L=\text{\quotes{low\_score}}\}$.
 
 Let $R_k$ be a recommendation with attributes $\{a_1, a_2, a_3, \ldots, a_n\}$. Here each $a_j\ (1 \leq j \leq n)$ is a combination of score/time with respect to a linguistic term of a category. Hence as shown previously we can calculate its membership value. Let $\mu_1, \mu_2, \mu_3, \ldots, \mu_n$ denote the respective membership values for each attribute. Here $n$ can vary for each $R_k$.  For instance, Fig. 11 shows the membership functions of $M_H$. Let $a_1$, $a_2$, $a_3$ be the following attributes
 \begin{align*}
@@ -762,12 +762,12 @@ Now, using the \textit{most probable criterion} the recommendation with the maxi
 \section{Experiment}
 A survey conducted in IIT Kharagpur was conducted to determine all the membership functions for all linguistic terms across all the categories. Some of the membership functions are shown in this paper. We also installed the mobile application on students' smart phones and analysed the results. We picked a random student and analysed his data for a day. TABLE III shows the \textit{tags} he visited throughout the day and their corresponding time and weights. The score for each \textit{tag} is also enumerated. TABLE IV shows the total time and score across all the categories. We considered the recommendations in the set $R$ where $R = \{R_1, R_2, R_3, R_4\}$.
 \begin{align*}
-R_1 =\ &\textit{"Catch up a movie this evening."}\\
-R_2 =\ &\textit{"Work is worship."}\\
-R_3 =\ &\textit{"Family matters."}\\
-R_4 =\ &\textit{"Hit the gym."}
+R_1 =\ &\textit{\quotes{Catch up a movie this evening.}}\\
+R_2 =\ &\textit{\quotes{Work is worship.}}\\
+R_3 =\ &\textit{\quotes{Family matters.}}\\
+R_4 =\ &\textit{\quotes{Hit the gym.}}
 \end{align*}
-The attributes of $R$ is shown in TABLE V. The membership values for each attribute is shown in TABLE VI and the corresponding score of each recommendation is also enumerated. As $\rho(R_1)$ is maximum the mobile application would recommend the student to \textit{"Catch up a movie this evening."}
+The attributes of $R$ is shown in TABLE V. The membership values for each attribute is shown in TABLE VI and the corresponding score of each recommendation is also enumerated. As $\rho(R_1)$ is maximum the mobile application would recommend the student to \textit{\quotes{Catch up a movie this evening.}}
 \begin{table}
 \small
 \captionof{table}{Experiment: Data}
@@ -829,13 +829,13 @@ $K_H=0.5$ & $M_H=10$ \\
 \hline
 \bf Recommendation & \bf Attributes \\
 \hline
-$R_1$ & $\{K_L = \text{"hectic"},\ M_L = \text{"less\_score"},$\\&$\ K_W=\text{"industrious"},\ M_W=\text{"high\_score"}\}$ \\
+$R_1$ & $\{K_L = \text{\quotes{hectic}},\ M_L = \text{\quotes{less\_score}},$\\&$\ K_W=\text{\quotes{industrious}},\ M_W=\text{\quotes{high\_score}}\}$ \\
 \hline
-$R_2$ & $\{K_W = \text{"lethargic"},\ M_W = \text{"less\_score"},$\\& $\ K_L=\text{"lazy"},\ M_L=\text{"high\_score"}\}$ \\
+$R_2$ & $\{K_W = \text{\quotes{lethargic}},\ M_W = \text{\quotes{less\_score}},$\\& $\ K_L=\text{\quotes{lazy}},\ M_L=\text{\quotes{high\_score}}\}$ \\
 \hline
-$R_3$ & $\{K_S = \text{"reserved"},\ M_S = \text{"less\_score"}\}$ \\
+$R_3$ & $\{K_S = \text{\quotes{reserved}},\ M_S = \text{\quotes{less\_score}}\}$ \\
 \hline
-$R_4$ & $\{K_H = \text{"unfit"},\ M_H = \text{"less\_score"}\}$ \\
+$R_4$ & $\{K_H = \text{\quotes{unfit}},\ M_H = \text{\quotes{less\_score}}\}$ \\
 \hline
 \end{tabular}
 \end{center}
@@ -879,7 +879,7 @@ Time management has always been a difficult art to master. This paper helps one 
 The long term applications are vast. This method can be used to access the performance of all students in an university. The results can be shared with the university so that the university can take appropriate actions for the welfare of the students in general.
 % use section* for acknowledgement
 \section*{Acknowledgment}
-The authors would like to thank Professor Sudhir Kumar Barai of the Civil Engineering Department, IIT Kharagpur for his continued and unconditional guidance. An exemplary teacher and a magnificent person, we consider ourselves lucky to have been taught by him and to have worked under his supervision. Without his course, "Soft Computing Tools in Engineering", and his co-operation the preparation of this paper would not have been possible.
+The authors would like to thank Professor Sudhir Kumar Barai of the Civil Engineering Department, IIT Kharagpur for his continued and unconditional guidance. An exemplary teacher and a magnificent person, we consider ourselves lucky to have been taught by him and to have worked under his supervision. Without his course, \quotes{Soft Computing Tools in Engineering}, and his co-operation the preparation of this paper would not have been possible.
 
 
 % Can use something like this to put references on a page
