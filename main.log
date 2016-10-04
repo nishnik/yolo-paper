@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.6.23)  3 OCT 2016 17:29
+This is XeTeX, Version 3.14159265-2.6-0.99996 (TeX Live 2016) (preloaded format=xelatex 2016.6.23)  4 OCT 2016 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,151 +462,182 @@ Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
 \tabu@vleads=\box34
 \tabu@cellskip=\skip50
 )
-(./main.aux)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/subfig/subfig.sty
+Package: subfig 2005/06/28 ver: 1.3 subfig package
+\c@KVtest=\count141
+\sf@farskip=\skip51
+\sf@captopadj=\dimen152
+\sf@capskip=\skip52
+\sf@nearskip=\skip53
+\c@subfigure=\count142
+\c@subfigure@save=\count143
+\c@lofdepth=\count144
+\c@subtable=\count145
+\c@subtable@save=\count146
+\c@lotdepth=\count147
+\sf@top=\skip54
+\sf@bottom=\skip55
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/commath/commath.sty
+Invalid UTF-8 byte or sequence at line 6 replaced by U+FFFD.
+Invalid UTF-8 byte or sequence at line 9 replaced by U+FFFD.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2016/02/27 v1.2a Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup6
+\symboldletters=\mathgroup7
+\symboldsymbols=\mathgroup8
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 142.
+LaTeX Info: Redefining \bm on input line 208.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/verbatim.sty
+Package: verbatim 2014/10/28 v1.5q LaTeX2e package for verbatim enhancements
+\every@verbatim=\toks24
+\verbatim@line=\toks25
+\verbatim@in@stream=\read1
+) (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 353.
-LaTeX Font Info:    ... okay on input line 353.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 359.
+LaTeX Font Info:    ... okay on input line 359.
 \AtBeginShipoutBox=\box35
-Package hyperref Info: Link coloring OFF on input line 353.
- (/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring OFF on input line 359.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count141
+\c@section@level=\count148
 )
-LaTeX Info: Redefining \ref on input line 353.
-LaTeX Info: Redefining \pageref on input line 353.
-LaTeX Info: Redefining \nameref on input line 353.
+LaTeX Info: Redefining \ref on input line 359.
+LaTeX Info: Redefining \pageref on input line 359.
+LaTeX Info: Redefining \nameref on input line 359.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: subfig package v1.3 is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 408.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 415.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 408.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 415.
 
 (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/se-ascii-print.def
 File: se-ascii-print.def 2016/05/16 v1.11 stringenc: Printable ASCII characters
 
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 451.
+LaTeX Font Info:    Try loading font information for U+msa on input line 460.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 451.
+LaTeX Font Info:    Try loading font information for U+msb on input line 460.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 File: images/fig1-2.png Graphic file (type QTm)
 
-<use  "images/fig1-2.png" >
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 571.
+<use  "images/fig1-2.png" > [1
+
+
+]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 582.
 
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [1
-
-
-]
+)
 File: images/fig2.png Graphic file (type QTm)
 
 <use  "images/fig2.png" >
 File: images/fig3.png Graphic file (type QTm)
- <use  "images/fig3.png" > [2]
-File: images/fit.png Graphic file (type QTm)
-
-<use  "images/fit.png" >
+ <use  "images/fig3.png" >
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-File: images/health.png Graphic file (type QTm)
-<use  "images/health.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+[2]
 File: images/social.png Graphic file (type QTm)
-<use  "images/social.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-File: images/work.png Graphic file (type QTm)
-<use  "images/work.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+ <use  "images/social.png" >
 File: images/leisure.png Graphic file (type QTm)
-<use  "images/leisure.png" >
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+ <use  "images/leisure.png" >
 File: images/other.png Graphic file (type QTm)
+
 <use  "images/other.png" >
+File: images/work.png Graphic file (type QTm)
+ <use  "images/work.png" >
+File: images/health.png Graphic file (type QTm)
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
+<use  "images/health.png" >
+File: images/fit.png Graphic file (type QTm)
+ <use  "images/fit.png" >
 File: images/ideal_health.png Graphic file (type QTm)
-<use  "images/ideal_health.png" > [3]
+
+<use  "images/ideal_health.png" >
 File: images/health_score.png Graphic file (type QTm)
  <use  "images/health_score.png" >
-[4]
-Underfull \hbox (badness 10000) in paragraph at lines 748--749
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 777--778
 []\OT1/ptm/m/n/10 Let $\OML/cmm/m/it/10 R[]$ \OT1/ptm/m/n/10 be a rec-om-men-da
 -tion with at-tributes
  []
 
 
-Underfull \hbox (badness 1648) in paragraph at lines 748--749
+Underfull \hbox (badness 1648) in paragraph at lines 777--778
 \OT1/ptm/m/n/10 its mem-ber-ship value. Let $\OML/cmm/m/it/10 ^^V[]; ^^V[]; ^^V
 []; [] ; ^^V[]$ \OT1/ptm/m/n/10 de-note the
  []
 
-
-Overfull \hbox (8.34792pt too wide) in paragraph at lines 824--837
+[4]
+Overfull \hbox (8.34792pt too wide) in paragraph at lines 855--868
  [] 
  []
 
 
-Overfull \hbox (5.09074pt too wide) in paragraph at lines 844--857
+Overfull \hbox (5.09074pt too wide) in paragraph at lines 875--888
  [] 
  []
 
 [5]
-Underfull \hbox (badness 1412) in paragraph at lines 924--925
-[]\OT1/ptm/m/n/8 Shilpa In-go-ley, J.W. Bakal ``Use of Fuzzy Logic in Eval-u-at
--ing
- []
-
 Missing character: There is no Ç in font ptmr7t!
 Missing character: There is no ş in font ptmr7t!
 Missing character: There is no ş in font ptmr7t!
 Missing character: There is no – in font ptmr7t!
+
+Underfull \hbox (badness 1412) in paragraph at lines 960--961
+[]\OT1/ptm/m/n/8 Shilpa In-go-ley, J.W. Bakal ``Use of Fuzzy Logic in Eval-u-at
+-ing
+ []
+
 Missing character: There is no ’ in font ptmri7t!
 Missing character: There is no ó in font ptmri7t!
 
@@ -620,21 +651,23 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 990.
-[6]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 990.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1019.
+[6
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1019.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 990.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 990.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 990.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1019.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1019.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1019.
  ) 
 Here is how much of TeX's memory you used:
- 11708 strings out of 493591
- 170570 string characters out of 6143546
- 257863 words of memory out of 5000000
- 15001 multiletter control sequences out of 15000+600000
- 34565 words of font info for 88 fonts, out of 8000000 for 9000
+ 12069 strings out of 493591
+ 175339 string characters out of 6143546
+ 263649 words of memory out of 5000000
+ 15341 multiletter control sequences out of 15000+600000
+ 35843 words of font info for 93 fonts, out of 8000000 for 9000
  1350 hyphenation exceptions out of 8191
- 36i,14n,45p,1556b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,14n,49p,1712b,464s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on main.pdf (6 pages).

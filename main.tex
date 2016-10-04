@@ -65,6 +65,12 @@
 %
 \documentclass[conference]{IEEEtran}
 \usepackage{blindtext, graphicx, hyperref, amsmath, fixmath, graphicx, caption, amssymb, tabu}
+\usepackage[caption=false]{subfig}
+\usepackage{commath}
+\usepackage{bm}
+\usepackage{verbatim}
+
+\captionsetup[subfigure]{labelformat=brace}
 \graphicspath{ {images/} }
 % Add the compsoc option for Computer Society conferences.
 %
@@ -354,7 +360,7 @@
 %
 % paper title
 % can use linebreaks \\ within to get better formatting as desired
-\title{\LARGE \bf A Fuzzy Logic System to Analyze a Student's Lifestyle}
+\title{\LARGE \bf A Fuzzy Logic System to Analyze a Student's Lifestyle\\[-3.0ex]}
 
 
 % author names and affiliations
@@ -392,7 +398,8 @@ V. Nayan Raju, and
 Ankit Kumar}
 \IEEEauthorblockA{Department of Mathematics, Indian Institute of Technology Kharagpur, India\\
 Email: \{\href{mailto:sourishg@iitkgp.ac.in}{sourishg}, \href{mailto:aaditya733@iitkgp.ac.in}{aaditya733}, \href{mailto:nishantnikhil@iitkgp.ac.in}{nishantnikhil}, \href{mailto:v.nayanraju@iitkgp.ac.in}{v.nayanraju}, 
-\href{mailto:ankitkahnani@iitkgp.ac.in}{ankitkahnani}\}@iitkgp.ac.in}}
+\href{mailto:ankitkahnani@iitkgp.ac.in}{ankitkahnani}\}@iitkgp.ac.in}
+\\}
 
 
 
@@ -442,11 +449,13 @@ Fuzzy Logic, GPS, Android Application
 
 \section{Introduction}
 
-A college student\rq s life is multidimensional. Students are expected to be academically excellent, physically fit and socially active along with managing their daily chores and pursuing their fields of interest. This structure would not only help students to engage all activities but also help them live a balanced life. This practice would eventually help them make better career choices on the basis of their interests. For such a practice one needs to invest a threshold amount of time and effort in all the activities. However only a certain amount of students are involved and excel in such a practice. This paper discusses a novel approach using fuzzy logic to generate an analysis of a student\rq s daily time expenditure in these various categories. Based upon the analysis of the results obtained from the above data appropriate results must be provided on regular basis. This would help the students work in their non-performing fields and maintain a balanced lifestyle.
+A college student\rq s life is multidimensional. Students are expected to be academically excellent, physically fit and socially active along with managing their daily chores and pursuing their fields of interest. This structure would not only help students to engage all activities but also help them live a balanced life. This practice would eventually help them make better career choices on the basis of their interests. For such a practice one needs to invest a threshold amount of time and effort in all the activities. However only a certain amount of students are involved and excel in such a practice. A lot of work has been done on student modelling, profiling and evaluation using fuzzy logic. Patel, Sajja, and Patel \cite{Patel} have evaluated student\rq s academic performance considering various factors such as attendance, internal exam, lab assignments, and teamwork evaluation. Ingoley and Bakal \cite{IEEEhowto:ingoley} have discarded the traditional methodology of assessment of student performance by also considering personal factors such as stress and accepting the fact that the evaluating system can be non-transparent. Gokmen et al. \cite{IEEEhowto:Gokmen} have made a fuzzy evaluation system which helps to evaluate students on the basis of their performance and the type of examinations by setting up an assessment criteria before an examination. Hameed and Sorensen \cite{hameed} have developed a reliable and robust system using Gaussian membership functions for student evaluation. Xu, Wang and Su \cite{Wang} have personalized the web-based educational system with respect to learning materials, quiz and advices achieving effectiveness in learning.
+
+This paper discusses a novel approach using fuzzy logic to generate an analysis of a student\rq s daily time expenditure in these various categories. Based upon the analysis of the results obtained from the above data appropriate results must be provided on regular basis. This would help the students work in their non-performing fields and maintain a balanced lifestyle.
 
 \subsection{About Fuzzy Logic}
 
-Over the past three decades, fuzzy logic is widely used in all problem-solving domains. One of the reasons for such instantaneous growth since its inception is its usability across all sectors be it Dynamic Programming, Process Control or Optimization. Fuzzy logic discards the theory of \lq Absolute Truth\rq and instead proposes a new theory of \lq Partial Truth\rq, also referred as degree of membership (suggested by Prof. Zadeh in 1965).
+Over the past three decades, fuzzy logic is widely used in all problem-solving domains. One of the reasons for such instantaneous growth since its inception is its usability across all sectors be it Dynamic Programming, Process Control or Optimization. Fuzzy logic discards the theory of \lq Absolute Truth\rq and instead proposes a new theory of \lq Partial Truth\rq, also referred as degree of membership (suggested by Prof. Zadeh in 1965) \cite{IEEEhowto:zadeh}.
 
 Let $\mathbf{S}$ be a non empty set, called the \textit{universe set}. Now, consider any crisp set $A \subset \mathbf{S}$. A characteristic function $\mathbold{\chi}_A$ is defined as
 
@@ -474,7 +483,7 @@ The problem can be divided into three major parts:
 \centering
 \captionsetup{justification=centering}
 \noindent \includegraphics[scale=0.45]{fig1-2}
-\caption{Fuzzy Logic System}
+\caption{Fuzzy logic system architecture for determining a student\rq s lifestyle.}
 \end{figure}
 
 % needed in second column of first page if using \IEEEpubid
@@ -566,6 +575,8 @@ The problem can be divided into three major parts:
 
 \section{Working Principle}
 
+The general work flow of this paper is shown in Fig. 1.
+
 \subsection{Data Collection}
 
 A college student is carrying his/her smart phone everywhere. Hence using the GPS extraction of his/her position throughout the day is possible. In the application and testing of this paper, the mobile application was developed on Android while the point of interest was extracted using Google Maps API by querying the user\rq s location extracted from GPS. Google Maps API classifies most of the locations into various categories namely \texttt{restaurant}, \texttt{shopping\_mall}, \texttt{city\_hall} etc. Let us refer to all these categories hence forward as \textit{tags}. Apart from these existing tags, two additional tags namely \texttt{home} and \texttt{work} are generated. The GPS data for these two additional tags would be user specific. Hence initially every user needs to update their location for these two tags specifically. This step is conducted so as to recognize distinctly one\rq s home and workplace which in further course would generate accurate results. Consider this example where one might go to a pizza shop to hang out with friends and family. However if someone is working in a pizza shop and the GPS details of the specific pizza shop is not known beforehand, it is very likely that one might consider this entire working time as time utilized for hanging out with friends. However if the person goes to some other pizza shop it is very likely he is going out with friends. To avoid this confusion this initial step has to be carried out.
@@ -630,6 +641,28 @@ H =\ \{&\text{gym},\ \text{playground},\ \text{swimming\_pool}, \text{health\_cl
 
 Fig. 2 shows a survey for determining \textit{positive} weights in the \textit{health} category. As $54.1\%$ people taking the survey voted \textit{playground} as their maximum positive benefit from the \textit{health} category, the corresponding weight for $x = \text{playground}$ is computed as $Z_H(x) = \frac{54.1}{100} \times 100 = 54.1$.
 
+\begin{figure*}
+\subfloat[Membership function of \textit{social} category]{%
+  \includegraphics[scale=0.4]{social}%
+}\hfill
+\subfloat[Membership function of \textit{leisure} category]{%
+  \includegraphics[scale=0.4]{leisure}%
+}\hfill
+\subfloat[Membership function of \textit{other} category]{%
+  \includegraphics[scale=0.4]{other}%
+}\hfill
+\subfloat[Membership function of \textit{work} category]{%
+  \includegraphics[scale=0.4]{work}%
+}\hfill
+\subfloat[Membership function of \textit{health} category]{%
+  \includegraphics[scale=0.4]{health}%
+}\hfill
+\subfloat[Membership function of the linguistic term \textit{fit}]{%
+  \includegraphics[scale=0.4]{fit}%
+}
+\caption{Membership functions for all linguistic terms of all categories with respect to time.}
+\end{figure*}
+
 Fig. 3 shows a survey for determining \textit{negative} weights in the \textit{health} category. As $41\%$ people taking the survey voted \textit{doctor} as their maximum non fulfilment from the \textit{health} category, the corresponding weight for $x = \text{doctor}$ is computed as $Z_H(x) = -\frac{41}{100} \times 100 = -41$.
 
 \textbf{Home tag}: The time spent at the \textit{home} location might not be entirely used for rest and leisure purpose only. One might practice yoga at one\rq s home and the equivalent time should be added to the \textit{health} category. Let $\tau$ denote the total time spent at \textit{home}. And $\tau_H$, $\tau_W$, $\tau_L$, $\tau_O$, $\tau_S$ denote the equivalent time in respective categories. This time is taken as user input through the mobile application. For better results a random push notification system can be used to learn the characteristics of the user. The home tag will be associated with weights $\xi_H$, $\xi_S$, $\xi_L$, $\xi_W$, $\xi_O$ which denote the intensity of the tags at \textit{home}. For instance, $\xi_W=30$ and $Z_W(\text{office}) = 50 > 30$ as working at \textit{home} might not be as productive as working at \textit{office}.
@@ -652,44 +685,44 @@ We define the following fuzzy sets for all the categories. These sets define the
 \end{align*}
 The membership functions for these fuzzy sets are constructed by conducting a survey on a sample population. The data from the survey can be approximated by using quantile range and trapezoidal membership functions. However, one can use various other techniques to plot membership functions. For instance, in a sample survey the hours spent by fit students in the \textit{health} category were: $0.45,\ 1.25,\ 2,\ 2.25,\ 2.5,\ 2.5,\ 2.75,\ 2.75,\ 3,\ 4,\ 4.25$. So with respect to the inter quantile range $Q_1 = 2$, $Q_2 = 2.5$, $Q_3 = 3$, $\inf = 0.45$, and $\sup = 4.25$. The trapezoidal membership function for the linguistic term \quotes{fit} under the \textit{health} category using these values is shown in Fig. $4$.
 
-Figure $5$, $6$, $7$, $8$, and $9$ show the membership functions for each linguistic term under each category.
+Fig. $4$ shows the membership functions for each linguistic of all categories.
 
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{fit}
-\caption{Membership function for the linguistic term \textit{fit}}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{health}
-\caption{Membership function for \textit{health} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{social}
-\caption{Membership function for \textit{social} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{work}
-\caption{Membership function for \textit{work} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{leisure}
-\caption{Membership function for \textit{leisure} category}
-\end{figure}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{other}
-\caption{Membership function for \textit{other} category}
-\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\noindent \includegraphics[scale=0.35]{fit}
+%\caption{Membership function for the linguistic term \textit{fit}}
+%\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\noindent \includegraphics[scale=0.35]{health}
+%\caption{Membership function for \textit{health} category}
+%\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\noindent \includegraphics[scale=0.35]{social}
+%\caption{Membership function for \textit{social} category}
+%\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\noindent \includegraphics[scale=0.35]{work}
+%\caption{Membership function for \textit{work} category}
+%\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\noindent \includegraphics[scale=0.35]{leisure}
+%\caption{Membership function for \textit{leisure} category}
+%\end{figure}
+%\begin{figure}[h!]
+%\centering
+%\captionsetup{justification=centering}
+%\noindent \includegraphics[scale=0.35]{other}
+%\caption{Membership function for \textit{other} category}
+%\end{figure}
 \textbf{Fuzzification of score}: Not only the time spent at a location is important but also how the time is spent is important too. This effective utilisation of time is denoted by a \textit{score} $M_S$, $M_L$, $M_O$, $M_W$, and $M_H$ for the respective categories. The score for the \textit{social} category is calculated as follows
 \[
 M_S = \sum_{x \in S} Y(x)Z_S(x) + \tau_S\xi_S
@@ -729,29 +762,25 @@ $4.25$ & $7$ & $4.25\times 7 =29.75$ \\
 \end{tabular}
 \end{center}
 \end{table}
-Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membership function for the linguistic term \quotes{ideal\_score} under the health category is shown in Fig. 10. Similarly one can plot plot the membership functions for the entire fuzzy set across all categories.
+Hence $\inf = 11.25,\ Q_1=29.75,\ Q_3=42,\ \sup = 50$.  Accordingly the membership function for the linguistic term \quotes{ideal\_score} under the health category is shown in Fig. 5. Similarly one can plot plot the membership functions for the entire fuzzy set across all categories.
 \begin{figure}[h!]
 \centering
 \captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{ideal_health}
+\noindent \includegraphics[scale=0.5]{ideal_health}
 \caption{Membership function for \quotes{ideal\_score} under \textit{health} category}
-\end{figure}
-\subsection{Defuzzification}
-\begin{figure}[h!]
-\centering
-\captionsetup{justification=centering}
-\noindent \includegraphics[scale=0.35]{health_score}
+\noindent \includegraphics[scale=0.5]{health_score}
 \caption{Calculation of membership values}
 \end{figure}
+\subsection{Defuzzification}
 Given the input data, $Y(x)$, $Z_i(x)$, $\tau_i$, and $\xi_i$ where $x \in \mathbf{X}$ and $i = S,\ L,\ O,\ W,\ H$, one calculate corresponding $K_i$ and $M_i$. Using surveys the membership functions for all linguistic terms in all categories for both fuzzification of time and score can be determined. Hence the membership value of $K_i$ and $M_i$ in the respective categories for all the linguistic terms can be determined. Let $\{R_1, R_2, \ldots, R_N\}$ be a set of recommendations. Now every $R_k\ (1 \leq k \leq N)$ will be dependent on a set of linguistic terms. For example, a recommendation $R = \textit{\quotes{All work and no play makes Jack a dull boy.}}$ will be outputted if a person is spending too much time and effort in work and less in his leisure and social life. That is he/she has a \quotes{industrious} work life with a high work score and has a \quotes{reserved} social life with a low social score and a \quotes{hectic} life with respect to leisure with a low score. So attributes of $R$ can be represented as $\{K_W=\text{\quotes{industrous}},\ M_W=\text{\quotes{high\_score}},\ K_S=\text{\quotes{reserved}},\ M_S=\text{\quotes{low\_score}},\ K_L=\text{\quotes{hectic}},\ M_L=\text{\quotes{low\_score}}\}$.
 
-Let $R_k$ be a recommendation with attributes $\{a_1, a_2, a_3, \ldots, a_n\}$. Here each $a_j\ (1 \leq j \leq n)$ is a combination of score/time with respect to a linguistic term of a category. Hence as shown previously one can calculate its membership value. Let $\mu_1, \mu_2, \mu_3, \ldots, \mu_n$ denote the respective membership values for each attribute. Here $n$ can vary for each $R_k$.  For instance, Fig. 11 shows the membership functions of $M_H$. Let $a_1$, $a_2$, $a_3$ be the following attributes
+Let $R_k$ be a recommendation with attributes $\{a_1, a_2, a_3, \ldots, a_n\}$. Here each $a_j\ (1 \leq j \leq n)$ is a combination of score/time with respect to a linguistic term of a category. Hence as shown previously one can calculate its membership value. Let $\mu_1, \mu_2, \mu_3, \ldots, \mu_n$ denote the respective membership values for each attribute. Here $n$ can vary for each $R_k$.  For instance, Fig. 6 shows the membership functions of $M_H$. Let $a_1$, $a_2$, $a_3$ be the following attributes
 \begin{align*}
 a_1\ =&\ M_H:low\_score\\
 a_2\ =&\ M_H:ideal\_score\\
 a_3\ =&\ M_H:high\_score
 \end{align*}
-Hence $\mu_1$, $\mu_2$, $\mu_3$ for $M_H=17$ as seen from Fig. 11 will be $0.6$, $0.310$, $0.0$ respectively. Using equal weighing criteria for each $a_j$, we can calculate a score of each recommendation $\rho(R_k)$ defined as
+Hence $\mu_1$, $\mu_2$, $\mu_3$ for $M_H=17$ as seen from Fig. 6 will be $0.6$, $0.310$, $0.0$ respectively. Using equal weighing criteria for each $a_j$, we can calculate a score of each recommendation $\rho(R_k)$ defined as
 $$\rho(R_k) = \frac{1}{n}\sum_{j=1}^{n} \mu_j$$
 Now, using the \textit{most probable criterion} the recommendation with the maximum score value $\rho(R_k)$ will be displayed as output.
 
@@ -763,7 +792,9 @@ R_2 =\ &\textit{\quotes{Work is worship.}}\\
 R_3 =\ &\textit{\quotes{Family matters.}}\\
 R_4 =\ &\textit{\quotes{Hit the gym.}}
 \end{align*}
-The attributes of $R$ is shown in TABLE V. The membership values for each attribute is shown in TABLE VI and the corresponding score of each recommendation is also enumerated. As $\rho(R_1)$ is maximum the mobile application would recommend the student to \textit{\quotes{Catch up a movie this evening.}}
+The attributes of $R$ is shown in TABLE V. The membership values for each attribute is shown in TABLE VI and the corresponding score of each recommendation is also enumerated. As $\rho(R_1)$ is maximum the mobile application recommended the student to \textit{\quotes{Catch up a movie this evening.}}
+
+The mobile application was developed on Android platform using Google Maps API for location tracking via GPS.
 \begin{table}
 \small
 \captionof{table}{Experiment: Data}
@@ -919,17 +950,15 @@ Sanskruti Patel, Priti Sajja, Atul Patel, \quotes{Fuzzy Logic based Expert Syste
 \bibitem{IEEEhowto:Chrysa}
 Chrysafiadi Konstantina, Virvou Maria, \quotes{Fuzzy Logic in Student Modeling}, \emph{Advances in Personalized Web-Based Education}, Springer International Publishing, 2015
 
-% 3
-\bibitem{IEEEhowto:ingoley}
-Shilpa Ingoley, J.W. Bakal \quotes{Use of Fuzzy Logic in Evaluating Students\rq Learning Achievement}, \emph{International Journal on Advanced Computer Engineering and Communication Technologies(IJACECT)}, November 2012, 2278-5140 Volume-1, Issue, 2012.
 
 % 4
 \bibitem{IEEEhowto:Gokmen}
 G. Gokmen, T.Ç. Akinci, M. Tektaş, N. Onat, G. Kocyigit, N. Tektaş, \quotes{Evaluation of student performance in laboratory applications using fuzzy logic} \emph{Procedia Soc. Behav. Sci., 2 (2010)}, pp. 902–909
 
 % 5
-\bibitem{IEEEhowto:Shilpa}
-Shilpa N. Ingoley, J. W. Bakal, \quotes{Evaluating Students\rq Performance using Fuzzy Logic} \emph{IJCA Proceedings on International Conference on Recent Trends in Information Technology and Computer Science 2012}
+\bibitem{IEEEhowto:ingoley}
+Shilpa Ingoley, J.W. Bakal \quotes{Use of Fuzzy Logic in Evaluating Students\rq Learning Achievement}, \emph{International Journal on Advanced Computer Engineering and Communication Technologies(IJACECT)}, November 2012, 2278-5140 Volume-1, Issue, 2012.
+
 
 % 6
 \bibitem{Wang}
