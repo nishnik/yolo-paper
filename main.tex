@@ -416,7 +416,7 @@ Email: \{\href{mailto:sourishg@iitkgp.ac.in}{sourishg}, \href{mailto:aaditya733@
 
 \begin{abstract}
 %\boldmath
-A college student\rq s life can be primarily categorized into domains such as education, health, social and other activities which may include daily chores and travelling time. Time management is crucial for every student. A self realisation of one\rq s daily time expenditure in various domains is therefore essential to maximize one\rq s effective output. This paper presents how an Android application using Fuzzy Logic and Global Positioning System (GPS) analyzes a student\rq s lifestyle and provides recommendations and suggestions based on the results.
+A college student\rq s life can be primarily categorized into domains such as education, health, social and other activities which may include daily chores and travelling time. Time management is crucial for every student. A self realisation of one\rq s daily time expenditure in various domains is therefore essential to maximize one\rq s effective output. This paper presents how a mobile application using Fuzzy Logic and Global Positioning System (GPS) analyzes a student\rq s lifestyle and provides recommendations and suggestions based on the results.
 \end{abstract}
 % IEEEtran.cls defaults to using nonbold math in the Abstract.
 % This preserves the distinction between vectors and scalars. However,
@@ -449,9 +449,9 @@ Fuzzy Logic, GPS, Android Application
 
 \section{Introduction}
 
-A college student\rq s life is multidimensional. Students are expected to be academically excellent, physically fit and socially active along with managing their daily chores and pursuing their fields of interest. This structure would not only help students to engage all activities but also help them live a balanced life. This practice would eventually help them make better career choices on the basis of their interests. For such a practice one needs to invest a threshold amount of time and effort in all the activities. However only a certain amount of students are involved and excel in such a practice. A lot of work has been done on student modelling, profiling and evaluation using fuzzy logic. Patel, Sajja, and Patel \cite{Patel} have evaluated student\rq s academic performance considering various factors such as attendance, internal exam, lab assignments, and teamwork evaluation. Ingoley and Bakal \cite{IEEEhowto:ingoley} have discarded the traditional methodology of assessment of student performance by also considering personal factors such as stress and accepting the fact that the evaluating system can be non-transparent. Gokmen et al. \cite{IEEEhowto:Gokmen} have made a fuzzy evaluation system which helps to evaluate students on the basis of their performance and the type of examinations by setting up an assessment criteria before an examination. Hameed and Sorensen \cite{hameed} have developed a reliable and robust system using Gaussian membership functions for student evaluation. Xu, Wang and Su \cite{Wang} have personalized the web-based educational system with respect to learning materials, quiz and advices achieving effectiveness in learning.
+A college student\rq s life is multidimensional. Students are expected to be academically excellent, physically fit and socially active along with managing their daily chores and pursuing their fields of interest. This structure would not only help students to engage all activities but also help them live a balanced life. This practice would eventually help them make better career choices on the basis of their interests. For such a practice one needs to invest a threshold amount of time and effort in all the activities. However only a certain amount of students are involved and excel in such a practice. In recent times various student related issues have been addressed by researches using fuzzy logic. Patel, Sajja, and Patel \cite{Patel} have evaluated student\rq s academic performance considering various factors such as attendance, internal exam, lab assignments, and teamwork evaluation. Konstantina and Maria \cite{IEEEhowto:Chrysa} have developed a fuzzy logic system which understands the forgetting process of a student. Ingoley and Bakal \cite{IEEEhowto:ingoley} have discarded the traditional methodology of assessment of student performance by also considering personal factors such as stress and accepting the fact that the evaluating system can be non-transparent. Gokmen et al. \cite{IEEEhowto:Gokmen} have made a fuzzy evaluation system which helps to evaluate students on the basis of their performance and the type of examinations by setting up an assessment criteria before an examination. Hameed and Sorensen \cite{hameed} have developed a reliable and robust system using Gaussian membership functions for student evaluation. Xu, Wang and Su \cite{Wang} have personalized the web-based educational system with respect to learning materials, quiz and advices achieving effectiveness in learning. Huapaya \cite{IEEEhowto:Huapaya} has developed fuzzy student diagnosis model to help teachers evaluate students by providing a high degree of flexibility.
 
-This paper discusses a novel approach using fuzzy logic to generate an analysis of a student\rq s daily time expenditure in these various categories. Based upon the analysis of the results obtained from the above data appropriate results must be provided on regular basis. This would help the students work in their non-performing fields and maintain a balanced lifestyle.
+From the review it has been seen that not many references address the student lifestyle issues using fuzzy logic. This paper discusses a novel approach using fuzzy logic to generate an analysis of a student\rq s daily time expenditure in various categories. Based upon the analysis of the results obtained from the above data appropriate results must be provided on regular basis. This would help the students work in their non-performing fields and maintain a balanced lifestyle.
 
 \subsection{About Fuzzy Logic}
 
@@ -467,14 +467,14 @@ $$
 \end{cases}
 $$
 
-A characteristic function assigns value of either $0$ or $1$ to each element of $\mathbf{S}$. Now consider a fuzzy set $B \subset \mathbf{S}$. A membership function $\mathbold{\mu}_B(x)$ is defined as $\mathbold{\mu}_B:\mathbf{S}\rightarrow[0, 1]$. Unlike the notion of a set in classical set theory where an element either belongs or does not belong to a particular set based on a bivalent condition, in fuzzy set theory an element\rq s belongingness to a particular set is decided using membership function which gives a membership value between $0$ and $1$.
+A characteristic function assigns value of either $0$ or $1$ to each element of $\mathbf{S}$. Now consider a fuzzy set $B \subset \mathbf{S}$. A membership function $\mathbold{\mu}_B(x)$ is defined as $\mathbold{\mu}_B:\mathbf{S}\rightarrow[0, 1]$. Unlike the notion of a set in classical set theory where an element either belongs or does not belong to a particular set based on a bivalent condition, in fuzzy set\cite{klir} theory an element\rq s belongingness to a particular set is decided using membership function which gives a membership value between $0$ and $1$.
 
 \subsection{Problem Formulation}
 
 The problem can be divided into three major parts:
 
 \begin{itemize}
-\item \textbf{Data Collection}: Using GPS and Google Places API, data collection of all the locations visited and time spent at each location by the user.
+\item \textbf{Data Collection}: Using GPS and Google Places API\cite{maps}, data collection of all the locations visited and time spent at each location by the user.
 \item \textbf{Fuzzification}: Fuzzify the crisp input and calculate the values of corresponding membership functions.
 \item \textbf{Defuzzification}: Set up a fuzzy inference system based on certain rules and then return recommendations and suggestions.
 \end{itemize}
@@ -579,7 +579,7 @@ The general work flow of this paper is shown in Fig. 1.
 
 \subsection{Data Collection}
 
-A college student is carrying his/her smart phone everywhere. Hence using the GPS extraction of his/her position throughout the day is possible. In the application and testing of this paper, the mobile application was developed on Android while the point of interest was extracted using Google Maps API by querying the user\rq s location extracted from GPS. Google Maps API classifies most of the locations into various categories namely \texttt{restaurant}, \texttt{shopping\_mall}, \texttt{city\_hall} etc. Let us refer to all these categories hence forward as \textit{tags}. Apart from these existing tags, two additional tags namely \texttt{home} and \texttt{work} are generated. The GPS data for these two additional tags would be user specific. Hence initially every user needs to update their location for these two tags specifically. This step is conducted so as to recognize distinctly one\rq s home and workplace which in further course would generate accurate results. Consider this example where one might go to a pizza shop to hang out with friends and family. However if someone is working in a pizza shop and the GPS details of the specific pizza shop is not known beforehand, it is very likely that one might consider this entire working time as time utilized for hanging out with friends. However if the person goes to some other pizza shop it is very likely he is going out with friends. To avoid this confusion this initial step has to be carried out.
+A college student is carrying his/her smart phone everywhere. Hence using the GPS extraction of his/her position throughout the day is possible. In the application and testing of this paper, the mobile application was developed on Android\cite{android} while the point of interest was extracted using Google Maps API by querying the user\rq s location extracted from GPS. Google Maps API classifies most of the locations into various categories namely \texttt{restaurant}, \texttt{shopping\_mall}, \texttt{city\_hall} etc. Let us refer to all these categories hence forward as \textit{tags}. Apart from these existing tags, two additional tags namely \texttt{home} and \texttt{work} are generated. The GPS data for these two additional tags would be user specific. Hence initially every user needs to update their location for these two tags specifically. This step is conducted so as to recognize distinctly one\rq s home and workplace which in further course would generate accurate results. Consider this example where one might go to a pizza shop to hang out with friends and family. However if someone is working in a pizza shop and the GPS details of the specific pizza shop is not known beforehand, it is very likely that one might consider this entire working time as time utilized for hanging out with friends. However if the person goes to some other pizza shop it is very likely he is going out with friends. To avoid this confusion this initial step has to be carried out.
 
 Let $\mathbf{X}$ be the set of all tags defined as $\mathbf{X} = \{x \mid x\text{ is a tag}\}$. Analysing the way a person lives is governed by many parameters, but in a typical student\rq s life we are mainly concerned about one\rq s health, education, leisure and social life. However a person also invests certain amount of time which fails to fall under these categories. A example of this would be travelling time. Activities like these fall under the \textit{other} category. Now let $S$, $L$, $H$, $W$, $O$ be subsets of $\mathbf{X}$ defined as
 \begin{align*}
@@ -794,7 +794,7 @@ R_4 =\ &\textit{\quotes{Hit the gym.}}
 \end{align*}
 The attributes of $R$ is shown in TABLE V. The membership values for each attribute is shown in TABLE VI and the corresponding score of each recommendation is also enumerated. As $\rho(R_1)$ is maximum the mobile application recommended the student to \textit{\quotes{Catch up a movie this evening.}}
 
-The mobile application was developed on Android platform using Google Maps API for location tracking via GPS.
+The mobile application was developed on Android platform using Google Maps API for location tracking via GPS. The screenshots of the application developed are shown in Fig. 7.
 \begin{table}
 \small
 \captionof{table}{Experiment: Data}
@@ -887,6 +887,15 @@ $R_4$ & $\{1.0,\ 0.8\}$ & $0.9$ \\
 \end{tabular}
 \end{center}
 \end{table}
+
+\begin{figure}[!tbp]
+  \centering
+  \subfloat[Recommendation screen]{\includegraphics[width=4cm]{screenshot_1}}
+  \hfill
+  \subfloat[\textit{work} category time distribution ]{\includegraphics[width=4cm]{screenshot_2}}
+  \caption{Screenshots of the mobile application}
+\end{figure}
+
 % if have a single appendix:
 %\appendix[Proof of the Zonklar Equations]
 % or
@@ -951,22 +960,23 @@ Sanskruti Patel, Priti Sajja, Atul Patel, \quotes{Fuzzy Logic based Expert Syste
 Chrysafiadi Konstantina, Virvou Maria, \quotes{Fuzzy Logic in Student Modeling}, \emph{Advances in Personalized Web-Based Education}, Springer International Publishing, 2015
 
 
+\bibitem{IEEEhowto:ingoley}
+Shilpa Ingoley, J.W. Bakal \quotes{Use of Fuzzy Logic in Evaluating Students\rq Learning Achievement}, \emph{International Journal on Advanced Computer Engineering and Communication Technologies(IJACECT)}, November 2012, 2278-5140 Volume-1, Issue, 2012.
+
 % 4
 \bibitem{IEEEhowto:Gokmen}
 G. Gokmen, T.Ç. Akinci, M. Tektaş, N. Onat, G. Kocyigit, N. Tektaş, \quotes{Evaluation of student performance in laboratory applications using fuzzy logic} \emph{Procedia Soc. Behav. Sci., 2 (2010)}, pp. 902–909
 
-% 5
-\bibitem{IEEEhowto:ingoley}
-Shilpa Ingoley, J.W. Bakal \quotes{Use of Fuzzy Logic in Evaluating Students\rq Learning Achievement}, \emph{International Journal on Advanced Computer Engineering and Communication Technologies(IJACECT)}, November 2012, 2278-5140 Volume-1, Issue, 2012.
 
+% 7
+\bibitem{hameed}
+Ibrahim A. Hameed and Claus G. Sorensen (2010). \quotes{Fuzzy Systems in Education: A More Reliable System for Student Evaluation}, \emph{Fuzzy Systems, Ahmad Taher Azar (Ed.)}, InTech, DOI: 10.5772/7216. Available from: http://www.intechopen.com/books/fuzzy-systems/fuzzy-systems-in-education-a-more-reliable-system-for-student-evaluation
 
 % 6
 \bibitem{Wang}
 Xu, D., Wang, H., Su., K. \quotes{Intelligent student profiling with fuzzy models.} \emph{In HICSS’02, 35th Annual Hawaii international conference on system sciences.}
 
-% 7
-\bibitem{hameed}
-Ibrahim A. Hameed and Claus G. Sorensen (2010). \quotes{Fuzzy Systems in Education: A More Reliable System for Student Evaluation}, \emph{Fuzzy Systems, Ahmad Taher Azar (Ed.)}, InTech, DOI: 10.5772/7216. Available from: http://www.intechopen.com/books/fuzzy-systems/fuzzy-systems-in-education-a-more-reliable-system-for-student-evaluation
+
 
 % 8
 \bibitem{IEEEhowto:Huapaya}
@@ -981,11 +991,11 @@ L. A. Zadeh, \quotes{Fuzzy sets}, \emph{Inform. Contr.}, vol. 8, pp. 338-353, 19
 \bibitem{klir}
 Klir, G.J., Yuan, B., \quotes{Fuzzy Sets, Fuzzy Logic, and Fuzzy Systems}, \emph{Selected Papers by Zadeh L.A} World Scientific, Singapore 
 
-% 11
-\bibitem{IEEEhowto:adeleke}
-Adeleke Raheem Ajiboye, Ruzaini Abdullah Arshah, Hongwu Qin, \quotes{Risk Status Prediction and Modelling Of Students\rq Academic Achievement - A Fuzzy Logic Approach} \emph{Research Inventy: International Journal Of Engineering And Science}, Vol.3, Issue 11 (November 2013), PP 07-14
+\bibitem{maps}
+Google Maps.\ (2016).\ \quotes{Google Maps API},  Retrieved from \emph{https://developers.google.com/maps/}
 
-
+\bibitem{android}
+Google Inc.\ (2016).\ \quotes{Android},  Retrieved from \emph{https://developer.android.com/google/index.html}
 
 \end{thebibliography}
 
