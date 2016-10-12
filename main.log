@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.23)  12 OCT 2016 21:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2016.6.23)  12 OCT 2016 22:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -539,10 +539,10 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 462.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<images/fignew1.png, id=58, 501.875pt x 295.1025pt>
-File: images/fignew1.png Graphic file (type png)
- <use images/fignew1.png>
-Package pdftex.def Info: images/fignew1.png used on input line 487.
+<images/fig1.png, id=58, 501.875pt x 295.1025pt>
+File: images/fig1.png Graphic file (type png)
+ <use images/fig1.png>
+Package pdftex.def Info: images/fig1.png used on input line 487.
 (pdftex.def)             Requested size: 225.84166pt x 132.79489pt.
 
 
@@ -571,7 +571,7 @@ Package pdftex.def Info: images/fig3.png used on input line 635.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <./images/fignew1.png> <./images/fig2.png>]
+[2 <./images/fig1.png> <./images/fig2.png>]
 <images/social.png, id=98, 433.62pt x 216.81pt>
 File: images/social.png Graphic file (type png)
  <use images/social.png>
@@ -697,7 +697,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 949.
  ) 
 Here is how much of TeX's memory you used:
  9063 strings out of 493014
- 137602 string characters out of 6133351
+ 137587 string characters out of 6133351
  245604 words of memory out of 5000000
  12421 multiletter control sequences out of 15000+600000
  46783 words of font info for 103 fonts, out of 8000000 for 9000
